@@ -3,12 +3,23 @@ import img2 from '../../assets/img2.jpg';
 import img14 from '../../assets/img14.jpg';
 import img25 from '../../assets/img25.jpg';
 import img5 from  '../../assets/img5.jpg';
+import advert from  '../../assets/adpic.jpg';
 
 
 
 const Hero = () => {
   return (
     <div >
+        <div className="bg-gray-50 py-4 hidden">
+      <div className="xl:container mx-auto px-3 sm:px-4 xl:px-2">
+        <div className="mx-auto table text-center text-sm">
+          <a className="uppercase" href="#">Advertisement</a>
+          <a href="#">
+            <img src={advert} alt="advertisement area"/>
+          </a>
+        </div>
+      </div>
+    </div>
       {/* hero big grid */}
       <div className="bg-white pt-16 py-6">
         <div className="xl:container mx-auto px-3 sm:px-4 xl:px-2">
