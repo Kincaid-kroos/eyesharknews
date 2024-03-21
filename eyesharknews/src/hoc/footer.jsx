@@ -3,6 +3,8 @@ import Scroll from './scroll.jsx';
 
 
 const Footer = () => {
+    const timeline = new Date().getFullYear();
+    
   return (
     <div>
     <footer className="bg-black text-gray-300">
@@ -43,38 +45,38 @@ const Footer = () => {
                    <div className="flex-shrink max-w-full w-1/2 md:w-1/4 mb-6 lg:mb-0">
                      <h4 className="text-base leading-normal mb-3 uppercase text-gray-100">Product</h4>
               <ul>
-          <li className="py-1 hover:text-white"><a href="#">Landing</a></li>
-          <li className="py-1 hover:text-white"><a href="#">Pages</a></li>
-          <li className="py-1 hover:text-white"><a href="#">Sections</a></li>
-          <li className="py-1 hover:text-white"><a href="#">Sign Up</a></li>
-          <li className="py-1 hover:text-white"><a href="#">Login</a></li>
+          <li className="py-1 hover:text-blue-300"><a href="#">Home</a></li>
+          <li className="py-1 hover:text-blue-300"><a href="#">Pages</a></li>
+          <li className="py-1 hover:text-blue-300"><a href="#">Categories</a></li>
+          <li className="py-1 hover:text-blue-300"><a href="#">Sign Up</a></li>
+          <li className="py-1 hover:text-blue-300"><a href="#">Login</a></li>
         </ul>
       </div>
       <div className="flex-shrink max-w-full w-1/2 md:w-1/4 mb-6 lg:mb-0">
-        <h4 className="text-base leading-normal mb-3 uppercase text-gray-100">Support</h4>
+        <h4 className="text-base leading-normal mb-3 uppercase text-gray-200">Support</h4>
         <ul>
-          <li className="py-1 hover:text-white"><a href="#">Documentation</a></li>
-          <li className="py-1 hover:text-white"><a href="#">Changelog</a></li>
-          <li className="py-1 hover:text-white"><a href="#">Tools</a></li>
-          <li className="py-1 hover:text-white"><a href="#">Icons</a></li>
+          <li className="py-1 hover:text-blue-300"><a href="#">Authors</a></li>
+          <li className="py-1 hover:text-blue-300"><a href="#">Read</a></li>
+          <li className="py-1 hover:text-blue-300"><a href="#">Tools</a></li>
+          <li className="py-1 hover:text-blue-300"><a href="#">Editors</a></li>
         </ul>
       </div>
       <div className="flex-shrink max-w-full w-1/2 md:w-1/4 mb-6 lg:mb-0">
-        <h4 className="text-base leading-normal mb-3 uppercase text-gray-100">Includes</h4>
+        <h4 className="text-base leading-normal mb-3 uppercase text-gray-200">Includes</h4>
         <ul>
-          <li className="py-1 hover:text-white"><a href="#">Utilities</a></li>
-          <li className="py-1 hover:text-white"><a href="#">Components</a></li>
-          <li className="py-1 hover:text-white"><a href="#">Example code</a></li>
-          <li className="py-1 hover:text-white"><a href="#">Updates</a></li>
+          <li className="py-1 hover:text-blue-300"><a href="#">General</a></li>
+          <li className="py-1 hover:text-blue-300"><a href="#">Comments</a></li>
+          <li className="py-1 hover:text-blue-300"><a href="#">Tutorials</a></li>
+          <li className="py-1 hover:text-blue-300"><a href="#">Guides</a></li>
         </ul>
       </div>
       <div className="flex-shrink max-w-full w-1/2 md:w-1/4 mb-6 lg:mb-0">
-        <h4 className="text-base leading-normal mb-3 uppercase text-gray-100">Legal</h4>
+        <h4 className="text-base leading-normal mb-3 uppercase text-gray-200">Legal</h4>
         <ul>
-          <li className="py-1 hover:text-white"><a href="#">Privacy Policy</a></li>
-          <li className="py-1 hover:text-white"><a href="#">Terms of Use</a></li>
-          <li className="py-1 hover:text-white"><a href="#">License</a></li>
-          <li className="py-1 hover:text-white"><a href="#">GDPR</a></li>
+          <li className="py-1 hover:text-blue-300"><a href="#">Privacy Policy</a></li>
+          <li className="py-1 hover:text-blue-300"><a href="#">Terms of Use</a></li>
+          <li className="py-1 hover:text-blue-300"><a href="#">License</a></li>
+          <li className="py-1 hover:text-blue-300"><a href="#">Agreement</a></li>
         </ul>
       </div>
     </div>
@@ -89,7 +91,7 @@ const Footer = () => {
         <div className="container py-4 border-t border-gray-200 border-opacity-10">
           <div className="row">
             <div className="col-12 col-md text-center">
-              <p className="d-block my-3">Copyright © EyesharkNews | All rights reserved.</p>
+              <p className="d-block my-3">Copyright {timeline} © EyesharkNews | All rights reserved.</p>
             </div>
           </div>
         </div>
