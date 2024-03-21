@@ -1,5 +1,5 @@
 
-import { BiSearch, BiX, BiMenu } from 'react-icons/bi';
+import { BiSearch,  BiMenu } from 'react-icons/bi';
 import { RiCloseLine } from 'react-icons/ri';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
@@ -14,6 +14,10 @@ const Navbar = () => {
 
   const toggleSearch = () => {
     setIsSearchOpen(!isSearchOpen);
+  };
+
+  const closeSearch = () => {
+    setIsSearchOpen(false);
   };
 
   return (
@@ -52,16 +56,18 @@ const Navbar = () => {
     <Link className="block py-3 px-6 border-b-2 border-transparent" to="/category/more">More</Link>
   </li>
 </ul>
-                
-                <div className="flex flex-row items-center text-gray-300">
+<div className="flex flex-row items-center text-gray-300">
                   {isSearchOpen ? (
                     <div className="search-dropdown relative border-r lg:border-l border-gray-800 hover:bg-gray-900">
                       <div className="dropdown-menu absolute left-auto right-0 top-full z-50 text-left bg-white text-gray-700 border border-gray-100 mt-1 p-3" style={{ minWidth: '15rem' }}>
                         <div className="flex flex-wrap items-stretch w-full relative">
-                          <input type="text" className="flex-shrink flex-grow  max-w-full leading-5 w-px flex-1 relative py-2 px-5 text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-gray-700 dark:border-gray-700 dark:focus:border-gray-600" name="text" placeholder="Search..." aria-label="search" />
+                          <input type="text" className="flex-shrink flex-grow  max-w-full leading-5 w-px flex-1 relative py-2 px-5 text-gray-800 bg-white border border-gray-300 overflow-x-auto focus:outline-none focus:border-gray-400 focus:ring-0 dark:text-gray-400 dark:bg-green-100  dark:focus:border-gray-600" name="text" placeholder="Search..." aria-label="search" />
                           <div className="flex -mr-px">
-                            <button className="flex items-center py-2 px-5 -ml-1 leading-5 text-gray-100 bg-black hover:text-white hover:bg-gray-900 hover:ring-0 focus:outline-none focus:ring-0" type="submit">
+                            <button className="flex items-center py-2 px-5 -ml-1 leading-5 text-gray-100 bg-black hover:text-white hover:bg-[#9ee251] hover:ring-0 focus:outline-none focus:ring-0" type="submit">
                               <BiSearch />
+                            </button>
+                            <button className="flex items-center py-2 px-5 -ml-1 leading-5 text-gray-100 bg-black hover:text-white hover:bg-[#9ee251] hover:ring-0 focus:outline-none focus:ring-0" onClick={closeSearch}>
+                              <RiCloseLine />
                             </button>
                           </div>
                         </div>
@@ -70,7 +76,7 @@ const Navbar = () => {
                   ) : (
                     <div className="search-dropdown relative border-r lg:border-l border-gray-800 hover:bg-gray-900">
                       <button className="block py-3 px-6 border-b-2 border-transparent" onClick={toggleSearch}>
-                        <BiX />
+                        <BiSearch />
                       </button>
                     </div>
                   )}
