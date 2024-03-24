@@ -35,25 +35,25 @@ const Navbar = () => {
     <Link className="block py-3 px-6 border-b-2 border-transparent font-bold" to="/">Home</Link>
   </li>
   <li className="relative border-l border-gray-800 hover:bg-gray-900">
-    <Link className="block py-3 px-6 border-b-2 border-transparent" to="/category/sports">Sports</Link>
+    <Link className="block py-3 px-6 border-b-2 border-transparent" to="/category/Sports">Sports</Link>
   </li>
   <li className="relative border-l border-gray-800 hover:bg-gray-900">
     <Link className="block py-3 px-6 border-b-2 border-transparent" to="/category/Entertainment">Entertainment</Link>
   </li>
   <li className="relative border-l border-gray-800 hover:bg-gray-900">
-    <Link className="block py-3 px-6 border-b-2 border-transparent" to="/category/business">Business</Link>
+    <Link className="block py-3 px-6 border-b-2 border-transparent" to="/category/Business">Business</Link>
   </li>
   <li className="relative border-l border-gray-800 hover:bg-gray-900">
-    <Link className="block py-3 px-6 border-b-2 border-transparent" to="/category/tech news">Tech News</Link>
+    <Link className="block py-3 px-6 border-b-2 border-transparent" to="/category/Tech News">Tech News</Link>
   </li>
   <li className="relative border-l border-gray-800 hover:bg-gray-900">
-    <Link className="block py-3 px-6 border-b-2 border-transparent" to="/category/world news">World News</Link>
+    <Link className="block py-3 px-6 border-b-2 border-transparent" to="/category/World News">World News</Link>
   </li>
   <li className="relative border-l border-gray-800 hover:bg-gray-900">
-    <Link className="block py-3 px-6 border-b-2 border-transparent" to="/category/politics">Politics</Link>
+    <Link className="block py-3 px-6 border-b-2 border-transparent" to="/category/Politics">Politics</Link>
   </li>
   <li className="relative border-l border-gray-800 hover:bg-gray-900">
-    <Link className="block py-3 px-6 border-b-2 border-transparent" to="/category/more">More</Link>
+    <Link className="block py-3 px-6 border-b-2 border-transparent" to="/category/More">More</Link>
   </li>
 </ul>
 <div className="flex flex-row items-center text-gray-300">
@@ -107,28 +107,28 @@ const Navbar = () => {
               <div className="text-center py-4 w-full font-bold border-b border-gray-800">EyeSharkNews</div>
               <ul id="side-menu" className="w-full float-none flex flex-col">
               <li className="relative">
-                <a href="#" className="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Home</a>
+                <Link to="/" className="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Home</Link>
               </li>
               <li className="relative">
-                <a href="#" className="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Sports</a>
+                <Link to="/category/sports" className="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Sports</Link>
               </li>
               <li className="relative">
-                <a href="#" className="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Entertainment</a>
+                <Link to="/category/Entertainment" className="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Entertainment</Link>
               </li>
               <li className="relative">
-                <a href="#" className="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Business</a>
+                <Link to="/category/Business" className="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Business</Link>
               </li>
               <li className="relative">
-                <a href="#" className="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Tech News</a>
+                <Link to="/category/Tech news" className="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Tech News</Link>
               </li>
               <li className="relative">
-                <a href="#" className="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Politics</a>
+                <Link to="/category/Politics" className="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Politics</Link>
               </li>
               <li className="relative">
-                <a href="#" className="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">World News</a>
+                <Link to="/category/World news" className="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">World News</Link>
               </li>
               <li className="relative">
-                <a href="#" className="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">More</a>
+                <Link to="/category/More" className="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">More</Link>
               </li>
             </ul>
             </nav>

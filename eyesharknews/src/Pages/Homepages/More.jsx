@@ -84,7 +84,7 @@ const more= () => {
           <div className="flex-shrink max-w-full w-full lg:w-4/4 overflow-hidden">
             <div className="w-full py-3">
               <h2 className="text-gray-800 text-2xl font-bold">
-                <span className="inline-block h-5 border-l-3 border-red-600 mr-2"></span>More
+              <div className="inline-block h-3 border-l-2 border-blue-800 mr-2"></div>More
               </h2>
             </div>
             <div className="flex flex-row flex-wrap -mx-3">
