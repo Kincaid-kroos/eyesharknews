@@ -4,6 +4,7 @@ import img8 from  '../../assets/img8.jpg';
 import img9 from  '../../assets/img9.jpg';
 import img10 from  '../../assets/img10.jpg';
 import img11 from  '../../assets/img11.jpg';
+import { Link } from 'react-router-dom';
 
 
 const newsItems = [
@@ -93,12 +94,12 @@ const more= () => {
               {newsItems.map((item, index) => (
                 <div key={index} className="flex-shrink max-w-full w-full sm:w-1/4 px-3 pb-3 pt-3 sm:pt-0 border-b-2 sm:border-b-0 border-dotted border-gray-100">
                   <div className="flex flex-row sm:block hover-img">
-                    <a href={item.link}>
+                    <Link to="/postpage">
                       <img className="max-w-full w-full mx-auto" src={item.image} alt={item.title} />
-                    </a>
+                    </Link>
                     <div className="py-0 sm:py-3 pl-3 sm:pl-0">
                       <h3 className="text-lg font-bold leading-tight mb-2">
-                        <a href={item.link}>{item.title}</a>
+                        <Link to="/postpage">{item.title}</Link>
                       </h3>
                       <p className="hidden md:block text-gray-600 leading-tight mb-1">{item.description}</p>
                       <a className="text-gray-500" href={item.categoryLink}><span className="inline-block h-3 border-l-2 border-red-600 mr-2"></span>{item.category}</a>
