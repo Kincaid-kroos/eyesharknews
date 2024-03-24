@@ -5,6 +5,7 @@ import img9 from  '../../assets/img9.jpg';
 import img10 from  '../../assets/img10.jpg';
 import img11 from  '../../assets/img11.jpg';
 import advert from  '../../assets/adpic.jpg';
+import { Link } from 'react-router-dom';
 
 const newsItems = [
     {
@@ -13,7 +14,7 @@ const newsItems = [
       title: "5 Tips to Save Money Booking Your Next Hotel Room",
       description: "This is a wider card with supporting text below as a natural lead-in to additional content.",
       category: "Business",
-      categoryLink: "#",
+    
     },
     {
       link: "#",
@@ -82,7 +83,7 @@ const NewsBlock = () => {
                     </a>
                     <div className="py-0 sm:py-3 pl-3 sm:pl-0">
                       <h3 className="text-lg font-bold leading-tight mb-2">
-                        <a href={item.link}>{item.title}</a>
+                        <Link to='/postpage'>{item.title}</Link>
                       </h3>
                       <p className="hidden md:block text-gray-600 leading-tight mb-1">{item.description}</p>
                       <a className="text-gray-500" href={item.categoryLink}><span className="inline-block h-3 border-l-2 border-red-600 mr-2"></span>{item.category}</a>

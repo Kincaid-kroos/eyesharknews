@@ -1,9 +1,10 @@
+import img5 from  '../../assets/img5.jpg';
+import advert from  '../../assets/adpic.jpg';
 import img8 from '../../assets/img8.jpg';
 import img2 from '../../assets/img2.jpg';
 import img14 from '../../assets/img14.jpg';
 import img25 from '../../assets/img25.jpg';
-import img5 from  '../../assets/img5.jpg';
-import advert from  '../../assets/adpic.jpg';
+import { Link } from 'react-router-dom';
 
 
 
@@ -33,9 +34,9 @@ const Hero = () => {
                   <img className="max-w-full w-full mx-auto h-auto text-gray-500" src={img8} />
                 </a>
                 <div className="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
-                  <a href="#">
+                  <Link to='/postpage'>
                     <h2 className="text-3xl font-bold capitalize text-white mb-3">Amazon Shoppers Are Ditching Designer Belts for This Best-Selling</h2>
-                  </a>
+                  </Link>
                   <p className="text-gray-100 hidden sm:inline-block">This is a wider card with supporting text below as a natural lead-in to additional content. This very helpful for generating default content..</p>
                   <div className="pt-2">
                     <div className="text-gray-100"><div className="inline-block h-3 border-l-2 border-green-800 mr-2"></div>World News</div>
