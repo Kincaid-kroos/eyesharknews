@@ -56,7 +56,7 @@ const Navbar = () => {
     <Link className="block py-3 px-6 border-b-2 border-transparent" to="/category/More">More</Link>
   </li>
   <li>
-  <Link to="/register" className="border rounded text-white justify-center text-center font-bold py-2 px-2 bg-danger no-underline ">
+  <Link to="/sign up" className="border rounded text-white justify-center text-center font-bold py-2 px-2 bg-danger no-underline ">
           Sign Up
    </Link>
   </li>
