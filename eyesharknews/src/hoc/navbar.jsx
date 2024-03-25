@@ -55,8 +55,13 @@ const Navbar = () => {
   <li className="relative border-l border-gray-800 hover:bg-gray-900">
     <Link className="block py-3 px-6 border-b-2 border-transparent" to="/category/More">More</Link>
   </li>
+  <li>
+  <Link to="/sign up" className="border rounded text-white justify-center text-center font-bold py-2 px-2 bg-danger no-underline ">
+          Sign Up
+   </Link>
+  </li>
 </ul>
-<div className="flex flex-row items-center text-gray-300">
+          <div className="flex flex-row items-center text-gray-300">
                   {isSearchOpen ? (
                     <div className="search-dropdown relative border-r lg:border-l border-gray-800 hover:bg-gray-900">
                       <div className="dropdown-menu absolute left-auto right-0 top-full z-50 text-left bg-white text-gray-700 border border-gray-100 mt-1 p-3" style={{ minWidth: '15rem' }}>
