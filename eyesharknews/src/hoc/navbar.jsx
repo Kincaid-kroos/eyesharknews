@@ -111,6 +111,12 @@ const Navbar = () => {
             <nav className="relative flex flex-wrap">
               <div className="text-center py-4 w-full font-bold border-b border-gray-800">EyeSharkNews</div>
               <ul id="side-menu" className="w-full float-none flex flex-col">
+                <li className='mt-3'>
+                <Link to="/sign up" className="border rounded-2xl text-[#ffffff] font-bold justify-center 
+                text-center  py-2 px-2 bg-[#4838d6] hover:bg-[#60eb54] no-underline ">
+                 Sign Up
+                </Link>
+             </li>
               <li className="relative">
                 <Link to="/" className="block py-2 px-5 border-b border-gray-100 hover:bg-gray-50">Home</Link>
               </li>
