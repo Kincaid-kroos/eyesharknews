@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/category/:categoryName' element={<Category />} />
-          <Route path='/postpage' element={<Post />} />
+          <Route path='/articles' element={<Post />} />
           <Route path='/sign in' element={<SignIn />} />
           <Route path='/sign up' element={<SignUp />} />
           
