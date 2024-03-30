@@ -35,7 +35,7 @@ const Hero = () => {
                 </a>
                 <div className="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
                   <Link to='/articles'>
-                    <h2 className="text-3xl font-bold capitalize text-white mb-3">Amazon Shoppers Are Ditching Designer Belts for This Best-Selling</h2>
+                    <h2 className="text-3xl font-bold capitalize text-white mb-3">Amazon Shoppers Are Ditching Designers for This Best-Selling</h2>
                   </Link>
                   <p className="text-gray-100 hidden sm:inline-block">This is a wider card with supporting text below as a natural lead-in to additional content. This very helpful for generating default content..</p>
                   <div className="pt-2">
