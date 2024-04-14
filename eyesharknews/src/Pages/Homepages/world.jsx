@@ -1,42 +1,32 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/splide/dist/css/themes/splide-default.min.css';
-import img8 from '../../assets/img8.jpg';
-import img2 from '../../assets/img2.jpg';
-import img14 from '../../assets/img14.jpg';
-import img25 from '../../assets/img25.jpg';
+
+import { useState, useEffect } from 'react';
+import axios from 'axios';
+import { Link } from 'react-router-dom';
+
+const csrfAxios = axios.create();
+csrfAxios.defaults.xsrfCookieName = 'csrftoken';
+csrfAxios.defaults.xsrfHeaderName = 'X-CSRFToken';
+
 
 const Spile = () => {
+
+  const [world, setWorld] = useState([]);
+
+  useEffect(() => {
+    const fetchWorldData = async () => {
+      try {
+        const heroRes = await csrfAxios.get(`https://api.eyesharknews.com/articles/api/posts/category/worldnews`);
+        setWorld(heroRes.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchWorldData();
+  }, []);
   
-  const items = [
-    {
-      imageSrc: img8,
-      title: "5 Tips to Save Money Booking Your Next Hotel Room",
-      category: "World News",
-      link: "#",
-      categoryLink: "#"
-    },
-    {
-      imageSrc: img14,
-      title: "5 Tips to Save Money Booking Your Next Hotel Room",
-      category: "World News",
-      link: "#",
-      categoryLink: "#"
-    },
-    {
-      imageSrc: img2,
-      title: "5 Tips to Save Money Booking Your Next Hotel Room",
-      category: "World News",
-      link: "#",
-      categoryLink: "#"
-    },
-    {
-      imageSrc: img25,
-      title: "5 Tips to Save Money Booking Your Next Hotel Room",
-      category: "World News",
-      link: "#",
-      categoryLink: "#"
-    },
-  ];
+  
 
   return (
     <div className='md:px-10 md:py-6'>
@@ -64,17 +54,17 @@ const Spile = () => {
         }}
         className="splide-container" // Add class to Splide component
       >
-        {items.map((item, index) => (
+        {world.map((item, index) => (
           <SplideSlide key={index}>
             {/* Apply consistent right margin to each slide */}
             <div className="mx-auto p-3 max-w-xs sm:max-w-full"> {/* Adjust the max width of the slide */}
               <div className="hover-img bg-white">
                 <a href={item.link}>
-                  <img className="max-w-full w-full mx-auto" src={item.imageSrc} alt={item.title} />
+                  <img className="max-w-full w-full mx-auto" src={item.image} alt={item.title} />
                 </a>
                 <div className="py-3 px-6">
                   <h3 className="text-lg font-bold leading-tight mb-2">
-                    <a href={item.link}>{item.title}</a>
+                  <Link to={`/articles/${item.slug}`}>{item.title}</Link>
                   </h3>
                   <a className="text-gray-500" href={item.categoryLink}>
                     <span className="inline-block h-3 border-l-2 border-red-600 mr-2"></span>

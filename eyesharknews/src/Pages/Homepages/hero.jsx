@@ -1,119 +1,87 @@
-import img5 from  '../../assets/img5.jpg';
-import advert from  '../../assets/adpic.jpg';
-import img8 from '../../assets/img8.jpg';
-import img2 from '../../assets/img2.jpg';
-import img14 from '../../assets/img14.jpg';
-import img25 from '../../assets/img25.jpg';
+import advert from '../../assets/adpic.jpg';
 import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-
+const csrfAxios = axios.create();
+csrfAxios.defaults.xsrfCookieName = 'csrftoken';
+csrfAxios.defaults.xsrfHeaderName = 'X-CSRFToken';
 
 const Hero = () => {
+  const [heroFeatured, setHeroFeatured] = useState([]);
+  const [otherPosts, setOtherPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchHeroData = async () => {
+      try {
+        const heroRes = await csrfAxios.get(`https://api.eyesharknews.com/articles/api/posts/hero/featured`);
+        setHeroFeatured(heroRes.data);
+        const otherRes = await csrfAxios.get(`https://api.eyesharknews.com/articles/api/posts/hero`);
+        const nonFeaturedPosts = otherRes.data.filter(post => !post.featured);
+        const remainingPosts = nonFeaturedPosts.slice(0, 4);
+        setOtherPosts(remainingPosts);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+    fetchHeroData();
+  }, []);
+
   return (
-    <div >
-        <div className="bg-gray-50 py-4 hidden">
-      <div className="xl:container mx-auto px-3 sm:px-4 xl:px-2">
-        <div className="mx-auto table text-center text-sm">
-          <a className="uppercase" href="#">Advertisement</a>
-          <a href="#">
-            <img src={advert} alt="advertisement area"/>
-          </a>
+    <div>
+      <div className="bg-gray-50 py-4 hidden">
+        <div className="xl:container mx-auto px-3 sm:px-4 xl:px-2">
+          <div className="mx-auto table text-center text-sm">
+            <a className="uppercase" href="#">Advertisement</a>
+            <a href="#">
+              <img src={advert} alt="advertisement area" />
+            </a>
+          </div>
         </div>
       </div>
-    </div>
-      {/* hero big grid */}
       <div className="bg-white pt-16 py-6">
         <div className="xl:container mx-auto px-3 sm:px-4 xl:px-2">
-          {/* big grid 1 */}
           <div className="flex flex-row flex-wrap">
-            {/* Start left cover */}
+            {/* Hero Featured Posts */}
             <div className="flex-shrink max-w-full w-full lg:w-1/2 pb-1 lg:pb-0 lg:pr-1">
-              <div className="relative hover-img max-h-98 overflow-hidden">
-                <a href="#">
-            
-                  <img className="max-w-full w-full mx-auto h-auto text-gray-500" src={img8} />
-                </a>
-                <div className="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
-                  <Link to='/articles'>
-                    <h2 className="text-3xl font-bold capitalize text-white mb-3">Amazon Shoppers Are Ditching Designer Belts for This Best-Selling</h2>
-                  </Link>
-                  <p className="text-gray-100 hidden sm:inline-block">This is a wider card with supporting text below as a natural lead-in to additional content. This very helpful for generating default content..</p>
-                  <div className="pt-2">
-                    <div className="text-gray-100"><div className="inline-block h-3 border-l-2 border-green-800 mr-2"></div>World News</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Start box news */}
-            <div className="flex-shrink max-w-full w-full lg:w-1/2">
-              <div className="box-one flex flex-row flex-wrap">
-                <article className="flex-shrink max-w-full w-full sm:w-1/2 p-2">
-                  <div className="relative hover-img max-h-48 overflow-hidden">
-                    <a href="#">
-                      
-                      <img className="max-w-full w-full mx-auto h-auto text-gray-500" src={img2} />
-                    </a>
-                    <div className="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
-                      <a href="#">
-                        <h2 className="text-lg font-bold capitalize leading-tight text-white mb-1">News magazines are becoming obsolete, replaced by gadgets</h2>
-                      </a>
-                      <div className="pt-1">
-                        <div className="text-gray-100"><div className="inline-block h-3 border-l-2 border-green-800 mr-2"></div>Politics</div>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-                <article className="flex-shrink max-w-full w-full sm:w-1/2 p-2">
-                  <div className="relative hover-img max-h-48 overflow-hidden">
-                    <a href="#">
-                      
-                      <img className="max-w-full w-full mx-auto h-auto text-gray-800" src={img14} />
-                    </a>
-                    <div className="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
-                      <a href="#">
-                        <h2 className="text-lg font-bold capitalize leading-tight text-white mb-1">News magazines are becoming obsolete, replaced by gadgets</h2>
-                      </a>
-                      <div className="pt-1">
-                        <div className="text-gray-100"><div className="inline-block h-3 border-l-2 border-green-800 mr-2"></div>Tech News</div>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-                <article className="flex-shrink max-w-full w-full sm:w-1/2 p-2">
-                  <div className="relative hover-img max-h-48 overflow-hidden">
-                    <a href="#">
-                      
-                      <img className="max-w-full w-full mx-auto h-auto text-gray-800" src={img25} />
-                    </a>
-                    <div className="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
-                      <a href="#">
-                        <h2 className="text-lg font-bold capitalize leading-tight text-white mb-1">1o ways to make your business more profitable</h2>
-                      </a>
-                      <div className="pt-1">
-                        <div className="text-gray-100"><div className="inline-block h-3 border-l-2 border-green-800 mr-2"></div>Business</div>
-                      </div>
-                    </div>
-                  </div>
-                </article>
-                
-                <article className="flex-shrink max-w-full w-full sm:w-1/2 p-2">
-                <div className="relative hover-img max-h-48 overflow-hidden">
+              {heroFeatured.map(post => (
+                <div key={post.id} className="relative hover-img max-h-98 overflow-hidden mb-4">
                   <a href="#">
-                    <img className="max-w-full w-full mx-auto h-auto" src={img5} alt="Image description" />
+                    <img className="w-full h-auto" src={post.image} alt={post.title} />
                   </a>
-                  <div className="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
-                    <a href="#">
-                      <h2 className="text-lg font-bold capitalize leading-tight text-[#ffffff] mb-1">Online taxi users are increasing drastically ahead of the new year</h2>
-                    </a>
-                    <div className="pt-1">
-                      <div className="text-gray-100"><div className="inline-block h-3 border-l-2 border-green-800 mr-2"></div>More</div>
+                  <div className="absolute px-5 pt-8 pb-5 bottom-0 w-full bg-gradient-cover">
+                    <Link to={`/articles/${post.slug}`}>
+                      <h2 className="text-3xl font-bold capitalize text-white mb-3">{post.title}</h2>
+                    </Link>
+                    <p className="text-gray-100 hidden sm:inline-block">{post.description}</p>
+                    <div className="pt-2">
+                      <div className="text-gray-100"><div className="inline-block h-3 border-l-2 border-red-800 mr-2"></div>{post.category}</div>
                     </div>
                   </div>
                 </div>
-              </article>          
-               
-               
+              ))}
+            </div>
+            {/* Other Posts */}
+            <div className="flex-shrink max-w-full w-full lg:w-1/2">
+              <div className="flex flex-row flex-wrap pb-8">
+                {otherPosts.map(post => (
+                  <article key={post.id} className="flex-shrink max-w-full w-full sm:w-1/2 p-2">
+                    <div className="relative hover-img max-h-48 overflow-hidden">
+                      <a href="#">
+                        <img className="w-full h-auto" src={post.image} alt={post.title} />
+                      </a>
+                      <div className="absolute px-4 pt-7 pb-4 bottom-0 w-full bg-gradient-cover">
+                        <Link to={`/articles/${post.slug}`}>
+                          <h2 className="text-lg font-bold capitalize leading-tight text-white mb-1">{post.title}</h2>
+                        </Link>
+                        <div className="pt-1">
+                          <div className="text-gray-300"><div className="inline-block h-3 
+                          border-l-2 border-red-800 mr-2 font-bold"></div>{post.category}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
+                ))}
               </div>
             </div>
           </div>
@@ -121,6 +89,6 @@ const Hero = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Hero;
