@@ -32,7 +32,7 @@ const Hero = () => {
       <div className="bg-gray-50 py-4 hidden">
         <div className="xl:container mx-auto px-3 sm:px-4 xl:px-2">
           <div className="mx-auto table text-center text-sm">
-            <a className="uppercase" href="#">Advertisement</a>
+            <a className="uppercase" href="#">Ad</a>
             <a href="#">
               <img src={advert} alt="advertisement area" />
             </a>
@@ -42,7 +42,7 @@ const Hero = () => {
       <div className="bg-white pt-16 py-6">
         <div className="xl:container mx-auto px-3 sm:px-4 xl:px-2">
           <div className="flex flex-row flex-wrap">
-            {/* Hero Featured Posts */}
+            {/* Hero Featured article to be posted */}
             <div className="flex-shrink max-w-full w-full lg:w-1/2 pb-1 lg:pb-0 lg:pr-1">
               {heroFeatured.map(post => (
                 <div key={post.id} className="relative hover-img max-h-98 overflow-hidden mb-4">
