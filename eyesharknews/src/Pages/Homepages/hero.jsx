@@ -32,7 +32,7 @@ const Hero = () => {
       <div className="bg-gray-50 py-4 hidden">
         <div className="xl:container mx-auto px-3 sm:px-4 xl:px-2">
           <div className="mx-auto table text-center text-sm">
-            <a className="uppercase" href="#">Advertisement</a>
+            <a className="uppercase" href="#">Ad</a>
             <a href="#">
               <img src={advert} alt="advertisement area" />
             </a>
